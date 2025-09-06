@@ -7,10 +7,10 @@ const RootText = () => {
     const router = useRouter()
     return (
         <div className='absolute left-1/2 top-1/2 -translate-1/2 text-center text-[#FFFFF2] flex flex-col gap-1'>
-            <h1 className='text-5xl uppercase font-medium'>Добро пожаловать на платформу Графикс!</h1>
-            <p className='md:text-xl'>Платформа позволяет создавать доски планирования с визуальным отслеживанием этапов выполнения.</p>
-            <p className='md:text-xl'>(Платформа находится в стадии разработки)</p>
-            <Button onClick={() => router.push('/boards')} className='mt-3 self-center text-[#FFFFF2] text-xl p-6'>Начать работу</Button>
+            <h1 className='md:text-5xl text-xl uppercase font-medium'>Добро пожаловать на платформу Графикс!</h1>
+            <p className='md:text-xl text-sm'>Платформа позволяет создавать доски планирования с визуальным отслеживанием этапов выполнения.</p>
+            <p className='md:text-xl text-sm'>(Платформа находится в стадии разработки)</p>
+            <Button onClick={() => router.push('/boards')} className='md:text-xl md:p-6 mt-3 self-center text-[#FFFFF2] p-3'>Начать работу</Button>
         </div>
     );
 };

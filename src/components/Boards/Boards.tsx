@@ -1,14 +1,19 @@
+'use client'
 import React from 'react';
 import { Button } from '../ui/button';
+import { useModal } from '@/context/ModalContext';
+import CreateBoardContent from '../Modal/CreateBoardContent';
+import BoardsList from './BoardsList/BoardsList';
 
 const Boards = () => {
+    const { openModal } = useModal()
     return (
-        <div className='bg-[#0b3a09] rounded-md p-4 m-4 w-[512px]'>
-            <div className='flex justify-between items-center'>
-                <p>У вас пока нет досок. Создайте новую!</p>
-                <Button className='bg-[#fffff2] text-black'>Создайте новую!</Button>
+        <div>
+            <div className='flex flex-col items-start p-4'>
+                <Button onClick={() => openModal(<CreateBoardContent />, 'Создание доски')} variant='white'>Создать новую доску</Button>
+                <BoardsList />
             </div>
-        </div>
+        </div >
     );
 };
 

@@ -28,7 +28,7 @@ export function Modal({
                 <Dialog.Overlay className="fixed inset-0 bg-black/50 data-[state=open]:animate-overlayShow" />
                 <Dialog.Content className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#1a1a25] min-w-[500px] p-6 rounded-lg shadow-lg max-w-md w-full data-[state=open]:animate-contentShow">
                     {title && (
-                        <Dialog.Title className="text-xl font-semibold mb-4">
+                        <Dialog.Title className="text-xl font-semibold mb-4 truncate">
                             {title}
                         </Dialog.Title>
                     )}

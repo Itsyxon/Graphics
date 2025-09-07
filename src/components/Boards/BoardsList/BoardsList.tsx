@@ -35,8 +35,8 @@ const BoardsList = () => {
                     }}
                     key={board.id}
                 >
-                    <p>{board.boardName}</p>
-                    <BoardButtons boardId={board.id} boardName={board.boardName} />
+                    <p className='truncate'>{board.boardName}</p>
+                    <BoardButtons boardId={board.id} board={board} />
                 </div>
             ))}
         </div>

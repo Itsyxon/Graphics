@@ -9,7 +9,7 @@ import LocalStorage from '@/lib/LocalStorage';
 const EditInput = ({ name, type = 'text', ...props }: { name: string } & ComponentProps<'input'>) => {
     const { register } = useFormContext()
     const commonProps = {
-        className: 'bg-[#FFFFF2] rounded-lg px-2 py-1 text-black focus:outline-0 !text-lg flex-1',
+        className: 'bg-[#FFFFF2] rounded-lg px-2 py-1 text-black focus:outline-0 flex-1',
         ...register(name),
         ...props
     }
@@ -21,13 +21,13 @@ const EditInput = ({ name, type = 'text', ...props }: { name: string } & Compone
     return <Input {...commonProps} type={type} />
 }
 
-const EditBoardContent = ({ boardId, boardName }: { boardId: number, boardName: string }) => {
+const EditBoardContent = ({ boardId, board }: { boardId: number, board: UserBoard }) => {
     const { closeModal } = useModal()
     const methods = useForm<UserBoard>({
         mode: 'onBlur',
         defaultValues: {
-            boardName: boardName,
-            bgColor: '#6366f1'
+            boardName: board.boardName,
+            bgColor: board.bgColor || '#6366f1'
         }
     })
 

@@ -10,14 +10,14 @@ const ConfirmDeleteBoard = ({ boardId }: { boardId: number }) => {
     const handleDeleteBoard = (boardId: number) => {
         LocalStorage.set('USER_BOARDS', boards.filter((item) => item.id != boardId))
         closeModal()
-        location.reload() // иммитирование повторного GET-запроса по ключу после мутации. Чуть позже добавлю стейт-менеджер и сделаю синхронизацию
+        location.reload() // ! иммитирование повторного GET-запроса по ключу после мутации. Чуть позже добавлю стейт-менеджер и сделаю синхронизацию
     }
     return (
         <div className='flex flex-col gap-2'>
             <p>Подтверждаете удаление?</p>
             <div className='flex gap-2 self-end mt-3'>
-                <Button variant='destructive' onClick={() => handleDeleteBoard(boardId)}>Удалить</Button>
                 <Button variant='white' onClick={closeModal}>Отменить</Button>
+                <Button variant='destructive' onClick={() => handleDeleteBoard(boardId)}>Удалить</Button>
             </div>
         </div>
     );

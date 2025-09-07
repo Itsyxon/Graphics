@@ -3,7 +3,7 @@ import MainLoader from '@/components/ui/loader';
 import LocalStorage from '@/lib/LocalStorage';
 import { UserBoard } from '@/types/BoardsTypes';
 import React, { useState, useEffect } from 'react';
-import BoardButton from './BoardButton';
+import BoardButtons from './BoardButtons';
 
 const BoardsList = () => {
     const [boardsList, setBoardsList] = useState<UserBoard[] | undefined>(undefined);
@@ -15,7 +15,7 @@ const BoardsList = () => {
     }, []);
 
     if (isLoading) {
-        return <MainLoader />;
+        return <MainLoader className='m-12' />;
     }
 
     if (!boardsList || !boardsList.length) {
@@ -25,16 +25,18 @@ const BoardsList = () => {
             </div>
         )
     }
-
     return (
         <div>
             {boardsList.map((board) => (
                 <div
-                    className='bg-[#6366f1] rounded-md p-3 mt-4 w-[512px] flex justify-between items-center'
+                    className="rounded-md p-3 mt-4 w-[512px] flex justify-between items-center"
+                    style={{
+                        backgroundColor: board.bgColor || '#6366f1'
+                    }}
                     key={board.id}
                 >
                     <p>{board.boardName}</p>
-                    <BoardButton boardId={board.id} boardName={board.boardName} />
+                    <BoardButtons boardId={board.id} boardName={board.boardName} />
                 </div>
             ))}
         </div>

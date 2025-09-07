@@ -39,6 +39,7 @@ const CreateBoardContent = () => {
         <FormProvider {...methods}>
             <form onSubmit={methods.handleSubmit(onSubmit)} className='flex flex-col gap-4'>
                 <FormInput name='boardName' placeholder='Название доски' />
+                <FormInput name='boardDescription' placeholder='Описание доски' />
                 <Button variant='secondary'>Создать доску</Button>
             </form>
         </FormProvider >

@@ -26,7 +26,7 @@ const BoardsList = () => {
         )
     }
     return (
-        <div>
+        <div className='flex flex-col max-h-[calc(100vh-200px)] flex-wrap gap-x-4'>
             {boardsList.map((board) => (
                 <Board key={board.id} board={board} />
             ))}

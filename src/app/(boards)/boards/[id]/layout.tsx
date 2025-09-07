@@ -15,11 +15,10 @@ const BoardLayout = () => {
         return null
     }
 
-
     return (
         <div className='p-4 text-2xl bg-[#23233a] flex gap-2 items-center'>
             <CircleArrowLeft onClick={() => router.push('/boards')} className='cursor-pointer' />
-            <h1 className='text-lg'> Доска: {board?.boardName || 'Н/Д'}</h1>
+            <h1 className='text-lg'> Доска: {board?.boardName || 'Н/Д'} {board.boardDescription ? `(${board.boardDescription})` : ""}</h1>
         </div >
     );
 };

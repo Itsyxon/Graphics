@@ -55,11 +55,15 @@ const EditBoardContent = ({ boardId, board }: { boardId: number, board: UserBoar
         <FormProvider {...methods}>
             <form className='flex flex-col gap-6' onSubmit={methods.handleSubmit(handleEditBoard)}>
                 <div className='flex'>
-                    <label className='w-[220px]'>Название доски</label>
+                    <label className='w-[220px]' htmlFor='boardName'>Название доски</label>
                     <EditInput name='boardName' type="text" />
                 </div>
                 <div className='flex'>
-                    <label className='w-[220px]'>Заливка</label>
+                    <label className='w-[220px]' htmlFor='boardDescription'>Описание доски</label>
+                    <EditInput name='boardDescription' type="text" />
+                </div>
+                <div className='flex'>
+                    <label className='w-[220px]' htmlFor='bgColor'>Заливка</label>
                     <EditInput name='bgColor' type="color" />
                 </div>
                 <div className='flex self-end gap-2 mt-3'>

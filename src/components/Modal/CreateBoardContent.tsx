@@ -33,6 +33,7 @@ const CreateBoardContent = () => {
 
         LocalStorage.set('USER_BOARDS', [...existingBoards, newBoard])
         closeModal()
+        location.reload() // иммитирование повторного GET-запроса по ключу после мутации. Чуть позже добавлю стейт-менеджер и сделаю синхронизацию
     }
     return (
         <FormProvider {...methods}>

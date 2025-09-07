@@ -13,7 +13,7 @@ const Boards = () => {
                 <Button onClick={() => openModal(<CreateBoardContent />, 'Создание доски')} variant='white'>Создать новую доску</Button>
                 <BoardsList />
             </div>
-        </div >
+        </div>
     );
 };
 

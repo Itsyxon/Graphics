@@ -12,7 +12,7 @@ const BoardButtons = ({ board, boardId }: { board: UserBoard, boardId: number })
 
     const { openModal } = useModal()
     return (
-        <div className='flex gap-2 items-center'>
+        <div className='flex gap-2 items-center [&>*]:border-black [&>*]:border'>
             <Button variant='white' onClick={() => router.push(`/boards/${boardId}`)}>Перейти</Button>
             <Button variant='default' onClick={() => openModal(<EditBoardContent board={board} boardId={boardId} />, `Изменение доски ${board.boardName}`)}><PaletteIcon /></Button>
             <Button variant='destructive' onClick={() => openModal(<ConfirmDeleteBoard boardId={boardId} />, `Удаление доски ${board.boardName}`)}><XIcon /></Button>

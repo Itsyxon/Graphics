@@ -3,7 +3,7 @@ import MainLoader from '@/components/ui/loader';
 import LocalStorage from '@/lib/LocalStorage';
 import { UserBoard } from '@/types/BoardsTypes';
 import React, { useState, useEffect } from 'react';
-import BoardButtons from './BoardButtons';
+import Board from './Board';
 
 const BoardsList = () => {
     const [boardsList, setBoardsList] = useState<UserBoard[] | undefined>(undefined);
@@ -28,16 +28,7 @@ const BoardsList = () => {
     return (
         <div>
             {boardsList.map((board) => (
-                <div
-                    className="rounded-md p-3 mt-4 w-[512px] flex justify-between items-center"
-                    style={{
-                        backgroundColor: board.bgColor || '#6366f1'
-                    }}
-                    key={board.id}
-                >
-                    <p className='truncate'>{board.boardName}</p>
-                    <BoardButtons boardId={board.id} board={board} />
-                </div>
+                <Board key={board.id} board={board} />
             ))}
         </div>
     );
